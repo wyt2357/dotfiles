@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -81,6 +81,7 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+    zsh-interactive-cd
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,10 +111,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -138,11 +139,19 @@ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # export PATH="$PATH:/Applications/Skim.app/Contents/MacOS"
-# 
+#
 # # ------------ Skim app functions ----------- #
 # function catp () { cat $* | enscript -p - | open -f -a Skim; }
 # function manp () { man -t $* | open -f -a Skim; }
 # # ------------ Skim app functions end ----------- #
 
 # vim mode
-bindkey -v
+# bindkey -v
+
+alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
+alias vim='nvim'
+
+export PATH='/Users/wyt/.opam/CP.2023.03+b1~8.17~2023.03+beta1/bin/':$PATH
+export PATH='/Users/wyt/bin/':$PATH
+
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore --files'

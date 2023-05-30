@@ -1,8 +1,13 @@
 set nu
 set cindent
 set autoindent
+set smartindent
+set showmatch
+set incsearch
 set tabstop=4
 set shiftwidth=4
+set expandtab
+set softtabstop=4
 set mouse=a
 set wrap
 set linebreak
@@ -11,6 +16,9 @@ set laststatus=2
 set ruler
 set backspace=2
 set clipboard=unnamed
+set relativenumber
+set hlsearch
+colorscheme elflord
 
 filetype plugin on
 
@@ -18,10 +26,11 @@ syntax on
 
 call plug#begin()
 
-	 Plug 'itchyny/lightline.vim'
-	 Plug 'preservim/nerdtree'
-	 Plug 'preservim/nerdcommenter'
-	 Plug 'easymotion/vim-easymotion'
+    Plug 'itchyny/lightline.vim'
+    Plug 'preservim/nerdtree'
+    Plug 'preservim/nerdcommenter'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'octol/vim-cpp-enhanced-highlight'
 
 call plug#end()
 
@@ -53,3 +62,4 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
+
